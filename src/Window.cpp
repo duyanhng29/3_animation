@@ -324,7 +324,7 @@ void Window::plotImGUI()
 	window_flags |= ImGuiWindowFlags_NoResize;
 	//gui window
 	ImGui::Begin("DOFs", NULL, window_flags);
-	ImGui::SetWindowPos(ImVec2(Window::width - 190, 0));
+	ImGui::SetWindowPos(ImVec2(600, 0));
 	ImGui::SetWindowSize(ImVec2(190, Window::height));
 
 	int numOfJoint = 0;

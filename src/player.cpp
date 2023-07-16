@@ -12,7 +12,7 @@ Player::Player(Skeleton* _skel, Animation* _anim)
 void Player::update()
 {
 	clock_t currT = clock();
-	time += ((float)currT - (float)prevT) / 1000.0f;
+	time += ((float)currT - (float)prevT) * 0.00001f;
 	prevT = currT;
 	glm::mat4 T;
 

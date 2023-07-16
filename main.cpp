@@ -64,7 +64,10 @@ int main(int argc, char* argv[])
 	// Create the GLFW window.
 	GLFWwindow* window = Window::createWindow(800, 600);
 	if (!window) exit(EXIT_FAILURE);
-
+	// Setup callbacks.
+	setup_callbacks(window);
+	// Setup OpenGL settings.
+	setup_opengl_settings();
 	//initialize imgui
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
@@ -75,7 +78,6 @@ int main(int argc, char* argv[])
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init(glsl_version);
 
-	//Set the name of skel and skin file getting from argv
 	for (int i = 1; i < argc; i++)
 	{
 		int j = 0;
@@ -94,12 +96,8 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	// Print OpenGL and GLSL versions.
 	print_versions();
-	// Setup callbacks.
-	setup_callbacks(window);
-	// Setup OpenGL settings.
-	setup_opengl_settings();
+	
 
 	// Initialize the shader program; exit if initialization fails.
 	if (!Window::initializeProgram()) exit(EXIT_FAILURE);
@@ -115,6 +113,9 @@ int main(int argc, char* argv[])
 		// Idle callback. Updating objects, etc. can be done here.
 		Window::idleCallback();
 	}
+
+
+
 
 
 	// Cleanup

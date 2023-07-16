@@ -61,7 +61,7 @@ void Skeleton::getJointRot(int jointNum, glm::vec3& rot)
 
 void Skeleton::setJointRot(int jointNum, glm::vec3& rot)
 {
-	joints[jointNum]->setRot(glm::vec3(rot[0], rot[1], rot[2]));
+	joints[jointNum]->setRot(rot);
 }
 
 void Skeleton::getJointRotMin(int jointNum, glm::vec3& rotMin)
