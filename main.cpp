@@ -1,6 +1,7 @@
 #include "main.h"
 
 // v2 comment
+// v2_a comment
 ////////////////////////////////////////////////////////////////////////////////
 
 void error_callback(int error, const char* description)
